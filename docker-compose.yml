@@ -1,36 +1,36 @@
 version: '3.7'
 services:
   # hoppscotch-backend:
-  #   image: 'musketeers/hoppscotch-backend:latest'
-  #   env_file:
-  #     - .env
-  #   restart: always
-  #   environment:
-  #     - 'DATABASE_URL=postgresql://hoppscotch:hoppscotch@182.184.67.82:9015/hoppscotch?connect_timeout=300'
-  #     - PORT=3170
-  #   volumes:
-  #     - /usr/src/app/node_modules/
-  #   depends_on:
-  #     hoppscotch-db:
-  #       condition: service_healthy
-  #   ports:
-  #     - '3170:3170'
+    # image: 'musketeers/hoppscotch-backend:latest'
+    # env_file:
+      # - .env
+    # restart: always
+    # environment:
+      # - 'DATABASE_URL=postgresql://hoppscotch:hoppscotch@182.184.67.82:9015/hoppscotch?connect_timeout=300'
+      # - PORT=3170
+    # volumes:
+      # - /usr/src/app/node_modules/
+    # depends_on:
+      # hoppscotch-db:
+        # condition: service_healthy
+    # ports:
+      # - '3170:3170'
   # hoppscotch-app:
-  #   image: 'musketeers/hoppscotch-app:latest'
-  #   env_file:
-  #     - .env
-  #   depends_on:
-  #     - hoppscotch-backend
-  #   ports:
-  #     - '3010:8080'
+    # image: 'musketeers/hoppscotch-app:latest'
+    # env_file:
+      # - .env
+    # depends_on:
+      # - hoppscotch-backend
+    # ports:
+      # - '3010:8080'
   # hoppscotch-sh-admin:
-  #   image: 'musketeers/hoppscotch-admin:latest'
-  #   env_file:
-  #     - ./.env
-  #   depends_on:
-  #     - hoppscotch-backend
-  #   ports:
-  #     - '3001:8080'
+    # image: 'musketeers/hoppscotch-admin:latest'
+    # env_file:
+      # - ./.env
+    # depends_on:
+      # - hoppscotch-backend
+    # ports:
+      # - '3001:8080'
   hoppscotch-aio:
     image: 'musketeers/hoppscotch-aio:latest'
     env_file:
@@ -41,7 +41,7 @@ services:
     ports:
       - '3000:3000'
       - '3100:3100'
-      - '3171:3170'
+      - '3170:3170'
   hoppscotch-db:
     image: 'postgres:14'
     ports:
