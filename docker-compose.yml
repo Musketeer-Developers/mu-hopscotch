@@ -39,7 +39,7 @@ services:
   #    hoppscotch-db:
   #      condition: service_healthy
     ports:
-      - '3000:3000'
+      - '3001:3000'
       - '3100:3100'
       - '3170:3170'
   # hoppscotch-db:
