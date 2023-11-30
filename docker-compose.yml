@@ -35,26 +35,26 @@ services:
     image: 'musketeers/hoppscotch-aio:latest'
     env_file:
       - .env
-    depends_on:
-      hoppscotch-db:
-        condition: service_healthy
+  #  depends_on:
+  #    hoppscotch-db:
+  #      condition: service_healthy
     ports:
       - '3000:3000'
       - '3100:3100'
       - '3170:3170'
-  hoppscotch-db:
-    image: 'postgres:14'
-    ports:
-      - '9016:9015'
-    user: postgres
-    environment:
-      POSTGRES_USER: hoppscotch
-      POSTGRES_PASSWORD: hoppscotch
-      POSTGRES_DB: hoppscotch
-    healthcheck:
-      test: ["CMD", "pg_isready", "-U", "hoppscotch", "-d", "hoppscotch"]
-       # - CMD-SHELL
-       # - "sh -c 'pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}'"
-      interval: 5s
-      timeout: 5s
-      retries: 10
+  # hoppscotch-db:
+    # image: 'postgres:14'
+    # ports:
+      # - '5432:9015'
+    # environment:
+      # POSTGRES_USER: hoppscotch
+      # POSTGRES_PASSWORD: hoppscotch
+      # POSTGRES_DB: hoppscotch
+    # healthcheck:
+      # test: ["CMD", "pg_isready", "-U", "hoppscotch", "-d", "hoppscotch"]
+# 
+      #  - CMD-SHELL
+      #  - "sh -c 'pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}'"
+      # interval: 5s
+      # timeout: 5s
+      # retries: 10
