@@ -45,7 +45,7 @@ services:
   hoppscotch-db:
     image: 'postgres:14'
     ports:
-      - ':5432:5432'
+      - '9015:9015'
     user: postgres
     environment:
       POSTGRES_USER: hoppscotch
